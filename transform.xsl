@@ -6,10 +6,13 @@
             <head>
                 <meta charset="utf-8"/>
                 <meta name="viewport" content="width=device-width"/>
-                <title>Lab 1 - Максим Берьянов</title>
+                <title>Задание 1 - Максим Берьянов</title>
                 <script id="MathJax-script"
                         async=""
                         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-svg.js"/>
+                <style>
+                    .MathJax { font-size: 300%; }
+                </style>
             </head>
             <body>
                 <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -68,7 +71,7 @@
     </xsl:template>
 
     <xsl:template match="низверх">
-        <munderover>
+        <munderover displaystyle="true">
             <xsl:apply-templates/>
         </munderover>
     </xsl:template>
