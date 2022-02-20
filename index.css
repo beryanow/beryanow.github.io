@@ -1,5 +1,10 @@
+:root {
+    --color-primary: #5176cd;
+    --color-secondary: #6488d9;
+}
+
 body {
-    background-image: linear-gradient(180deg, cadetblue, #3a6a6c);
+    background-image: linear-gradient(180deg, var(--color-primary), var(--color-secondary));
 }
 
 .tile-background {
@@ -29,22 +34,23 @@ body {
     width: 190px;
     height: 40px;
     border-radius: 10px;
-    background: #3a6a6c;
+    background: var(--color-primary);
     border: 0;
     color: white;
     font-size: 15px;
+    font-weight: bold;
     font-family: Arial, serif;
     transition-property: background;
     transition-duration: .3s;
 }
 
 .tile-button:hover {
-    background: #54999c;
+    background: var(--color-secondary);
 }
 
 .tile-title {
     font-size: 23px;
-    color: #315a5c;
+    color: var(--color-primary);
     font-weight: bold;
     font-family: Arial, serif;
     margin-left: 15px;
@@ -60,7 +66,7 @@ body {
 }
 
 .card-background {
-    background: #3a6a6c;
+    background: var(--color-primary);
     height: 80px;
     margin: 10px;
     border-radius: 10px;
@@ -70,7 +76,7 @@ body {
 }
 
 .card-background:hover {
-    background: #54999c;
+    background: var(--color-secondary);
 }
 
 .card-image {
