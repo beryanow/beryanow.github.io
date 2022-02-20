@@ -1,5 +1,5 @@
 body {
-    background-color: cadetblue;
+    background-image: linear-gradient(180deg, cadetblue, #3a6a6c);
 }
 
 .tile-background {
@@ -10,26 +10,72 @@ body {
 
 .tile {
     display: flex;
+    flex-direction: column;
     background-color: white;
     width: 400px;
-    height: 400px;
+    height: 245px;
     border-radius: 10px;
     margin: auto;
     box-shadow: 0px 11px 24px -9px rgba(34, 60, 80, 0.2);
 }
 
 .tile-buttons {
-    margin: 0 auto;
-    margin-bottom: 5px;
-    align-self: flex-end;
+    margin-top: auto;
+    margin-bottom: 10px;
+    align-self: center;
 }
 
 .tile-button {
-    width: 193px;
+    width: 190px;
     height: 40px;
     border-radius: 10px;
     background: #3a6a6c;
     border: 0;
     color: white;
     font-size: 15px;
+    font-family: Arial, serif;
+    transition-property: background;
+    transition-duration: .3s;
+}
+
+.tile-button:hover {
+    background: #54999c;
+}
+
+.tile-title {
+    font-size: 23px;
+    color: #315a5c;
+    font-weight: bold;
+    font-family: Arial, serif;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.card-name {
+    font-size: 23px;
+    color: white;
+    font-weight: bold;
+    font-family: Arial, serif;
+    margin: auto auto auto -20px;
+}
+
+.card-background {
+    background: #3a6a6c;
+    height: 80px;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    transition-property: background;
+    transition-duration: .3s;
+}
+
+.card-background:hover {
+    background: #54999c;
+}
+
+.card-image {
+    height: 45px;
+    width: 45px;
+    margin: auto;
+    border-radius: 25px;
 }
