@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Checkinator 1</title>
+    <meta charset="utf-8">
+</head>
+<body>
+
+<h4>msberyanov</h4>
+
+<h5>Коэффициенты</h5>
+<input type="number" value="5" id="n1">
+<input type="number" value="15" id="n2">
+<input type="number" value="15" id="n3">
+<input type="number" value="15" id="n4">
+<input type="number" value="15" id="n5">
+<input type="number" value="15" id="n6">
+
+<h5>Результат</h5>
+<input type="number" value="" id="result1">
+<input type="number" value="" id="result2">
+
+<button id="bt" onclick="
+
+      const n1 = Number(document.querySelector('#n1').value);
+      const n2 = Number(document.querySelector('#n2').value);
+      const n3 = Number(document.querySelector('#n3').value);
+      const n4 = Number(document.querySelector('#n4').value);
+      const n5 = Number(document.querySelector('#n5').value);
+      const n6 = Number(document.querySelector('#n6').value);
+
+      const r1 = n1 / n4;
+      const r2 = n2 / n5;
+
+      const y = (n3 - r1 * n6) / (n2 - r1 * n5)
+      const x = (n3 - r2 * n6) / (n1 - r2 * n4)
+
+      /* запись результата */
+      document.querySelector('#result1').value = x;
+      document.querySelector('#result2').value = y;
+    ">Выполнить задание
+</button>
+
+
+</body>
+</html>
