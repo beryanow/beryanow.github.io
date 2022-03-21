@@ -9,8 +9,19 @@
 <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 <script src="bin/jsencrypt.min.js"></script>
 <script type="text/javascript">
+    const getPrivateKey = () => {
+        const paramsString = document.location.search;
+        const searchParams = new URLSearchParams(paramsString);
+
+        return searchParams.get("key").replaceAll(" ", "+");
+    }
+
     function requirePrivateKey() {
-        const privateKey = prompt('Введите ключ доступа...');
+        let privateKey = getPrivateKey();
+
+        if (!privateKey) {
+            privateKey = prompt('Введите ключ доступа...');
+        }
 
         const encryptedMessage = "VqqZNyv790fJEFS0ks/sd5iPHc8zN9VWjLQComGYCDIxmORRisADW2VVxlEar6Fn0XNE8FeB8lMbShSSA176dGjL7FAPw9SoE54cWNJU6m4HVPasbhP4g1l9aN239sCH7tfInZz76sotAtOwwVa/duskceADRlK0JnqDcFcbwPQ=";
 
