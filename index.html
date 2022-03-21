@@ -5,6 +5,47 @@
     <title>Задания - Максим Берьянов</title>
     <link href="index.css" rel="stylesheet">
 </head>
+
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="bin/jsencrypt.min.js"></script>
+<script type="text/javascript">
+    function requirePrivateKey() {
+        const privateKey = prompt('Введите ключ доступа...');
+
+        const encryptedMessage = "VqqZNyv790fJEFS0ks/sd5iPHc8zN9VWjLQComGYCDIxmORRisADW2VVxlEar6Fn0XNE8FeB8lMbShSSA176dGjL7FAPw9SoE54cWNJU6m4HVPasbhP4g1l9aN239sCH7tfInZz76sotAtOwwVa/duskceADRlK0JnqDcFcbwPQ=";
+
+        const decrypt = new JSEncrypt();
+        decrypt.setPrivateKey(privateKey);
+
+        const unencrypted = decrypt.decrypt(encryptedMessage);
+
+        const button = document.getElementById("course-work-id");
+
+        const buttonStyle = button.style["background"];
+        const buttonTextContent = button.textContent;
+
+        if (unencrypted) {
+            button.style["background"] = "green";
+            button.textContent = "Верный ключ доступа";
+
+            setTimeout(() => {
+                window.location.href = unencrypted;
+
+                button.style["background"] = buttonStyle;
+                button.textContent = buttonTextContent;
+            }, 1500);
+        } else {
+            button.style["background"] = "red";
+            button.textContent = "Неверный ключ доступа";
+
+            setTimeout(() => {
+                button.style["background"] = buttonStyle;
+                button.textContent = buttonTextContent;
+            }, 1500);
+        }
+    }
+</script>
+
 <body>
 <div class="tile-background">
     <div class="tile">
@@ -13,10 +54,14 @@
             <img src="avatar.jpg" alt="avatar" class="card-image"/>
             <div class="card-name">Берьянов Максим</div>
         </div>
-        <div class="tile-title">Выполненные задания</div>
+        <div class="tile-title">Задания</div>
         <div class="tile-buttons">
             <button class="tile-button" onclick="location.href='task1.xml';">Задание 1</button>
             <button class="tile-button" onclick="location.href='task2.xml';">Задание 2</button>
+        </div>
+        <div class="tile-title">Курсовая работа</div>
+        <div class="tile-buttons">
+            <button id="course-work-id" class="tile-button" style="width: 380px" onclick="requirePrivateKey()">Просмотреть</button>
         </div>
     </div>
 </div>
