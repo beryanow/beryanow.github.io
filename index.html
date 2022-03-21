@@ -23,6 +23,9 @@
 
         const buttonStyle = button.style["background"];
         const buttonTextContent = button.textContent;
+        const buttonOnClick = button.onclick;
+
+        button.onclick = undefined;
 
         if (unencrypted) {
             button.style["background"] = "green";
@@ -33,6 +36,8 @@
 
                 button.style["background"] = buttonStyle;
                 button.textContent = buttonTextContent;
+
+                button.onclick = buttonOnClick;
             }, 1500);
         } else {
             button.style["background"] = "red";
@@ -41,6 +46,8 @@
             setTimeout(() => {
                 button.style["background"] = buttonStyle;
                 button.textContent = buttonTextContent;
+
+                button.onclick = buttonOnClick;
             }, 1500);
         }
     }
