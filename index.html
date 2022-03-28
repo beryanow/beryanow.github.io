@@ -12,13 +12,19 @@
     const getPrivateKey = () => {
         const paramsString = document.location.search;
         const searchParams = new URLSearchParams(paramsString);
+        const key = searchParams.get("key");
 
-        return searchParams.get("key").replaceAll(" ", "+");
+        if (key) {
+            return key.replaceAll(" ", "+");
+        }
+
+        return key;
     }
 
     function requirePrivateKey() {
         let privateKey = getPrivateKey();
 
+        console.log(privateKey)
         if (!privateKey) {
             privateKey = prompt('Введите ключ доступа...');
         }
