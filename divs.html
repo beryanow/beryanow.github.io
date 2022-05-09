@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Задание</title>
+    <meta charset="UTF-8">
+</head>
+
+<script>
+    const createArticleDivs = () => {
+        const article = document.createElement('article');
+
+        for (let i = 0; i < 1000; i++) {
+            const div = document.createElement('div');
+            div.setAttribute('id', `i${i}`);
+            article.appendChild(div);
+        }
+
+        document.body.prepend(article);
+    };
+</script>
+
+<body>
+<h4>msberyanov</h4>
+<button id="bt" onclick={createArticleDivs()}>Выполнить задание</button>
+</body>
+</html>
